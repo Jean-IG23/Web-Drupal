@@ -18,6 +18,31 @@ body {
     overflow: visible !important;
 }
 
+/* --- BARRA DE DESPLAZAMIENTO PERSONALIZADA --- */
+
+/* Ancho de la barra */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* El fondo de la barra (el carril) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* La parte que se mueve (el pulgar) */
+::-webkit-scrollbar-thumb {
+    background: #84A8C8; /* El azul grisáceo de tu tema */
+    border-radius: 6px; /* Bordes redondos */
+    border: 3px solid #f1f1f1; /* Espacio blanco alrededor para que se vea flotante */
+}
+
+/* Al pasar el mouse sobre la barra */
+::-webkit-scrollbar-thumb:hover {
+    background: #0077c5; /* Azul más intenso al interactuar */
+}
+
+
 /* 2. JERARQUÍA DE TÍTULOS */
 h2, h3 {
     padding-bottom: 5px !important;
@@ -105,4 +130,21 @@ h2, h3 {
     overflow: visible !important; /* Permite que el botón se vea fuera de la caja negra */
     z-index: 500 !important; /* Un z-index menor que el del botón */
     position: relative !important;
+}
+
+
+/* --- EFECTO ZOOM EN IMÁGENES --- */
+
+/* Aplica a las imágenes dentro de las vistas (tu galería) */
+.view-content img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Suaviza la animación */
+    border-radius: 8px; /* Asegura bordes redondeados en las fotos */
+}
+
+/* Al pasar el mouse */
+.view-content img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra flotante */
+    cursor: pointer;
+    z-index: 2; /* Asegura que la imagen sobresalga */
 }
