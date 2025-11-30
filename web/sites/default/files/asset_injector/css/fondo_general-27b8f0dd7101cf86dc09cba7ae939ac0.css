@@ -1,0 +1,108 @@
+/*
+ * CÓDIGO FINAL CONSOLIDADO: TODOS LOS AJUSTES DE DISEÑO
+ */
+
+/* 1. CONFIGURACIÓN DE COLOR Y LEGIBILIDAD GLOBAL */
+/* Reglas únicas para el body, incluyendo la tipografía para optimización */
+body {
+    background-color: #ffffff !important; /* Fondo exterior blanco (Body) */
+    line-height: 1.6; /* Mejora la separación entre líneas */
+    font-size: 17px; /* Fuente más grande para mejor legibilidad */
+}
+
+/* El área de contenido principal (.layout-container) es Gris Pálido (#ebebeb) */
+.layout-container {
+    background-color: #ebebeb !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    border-radius: 8px !important; 
+    overflow: visible !important;
+}
+
+/* 2. JERARQUÍA DE TÍTULOS */
+h2, h3 {
+    padding-bottom: 5px !important;
+    border-bottom: 2px solid #555555 !important; /* Línea en gris oscuro */
+    margin-top: 40px !important; 
+    margin-bottom: 20px !important; 
+    color: #333333; 
+}
+
+/* 3. NAVEGACIÓN Y BORDES SUAVES */
+.button, 
+.form-submit {
+    border-radius: 8px !important; 
+}
+.toolbar-bar {
+    border-radius: 0 0 8px 8px !important;
+}
+
+/* 4. ESTILO DE BOTONES DE NAVEGACIÓN (Hover Effect) */
+.menu--main a {
+    border: 1px solid transparent; 
+    border-radius: 5px; 
+    padding: 8px 12px !important; 
+    transition: background-color 0.3s, border-color 0.3s; 
+    text-decoration: none !important; 
+}
+
+.menu--main a:hover {
+    background-color: #f0f0f0; 
+    border-color: #cccccc; 
+    color: #0077c5 !important; /* Cambio de color de texto */
+}
+
+.menu--main > li {
+    padding: 0 5px; 
+}
+
+/* 5. DISEÑO DE BRANDING (HEADER) */
+.site-branding {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+
+/* --- ESTILO DEL BOTÓN FLOTANTE --- */
+#back-to-top {
+    position: fixed !important; /* Obligatorio */
+    bottom: 40px !important;
+    right: 40px !important;
+    z-index: 2147483647 !important; /* El valor máximo posible en CSS */
+    
+    /* Diseño */
+    width: 50px;
+    height: 50px;
+    background-color: #0077c5;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra más fuerte para que destaque */
+    
+    display: none; /* El JS lo activa */
+}
+
+#back-to-top::after {
+    content: '↑';
+}
+
+#back-to-top:hover {
+    background-color: #005a9c;
+    transform: scale(1.1);
+}
+
+
+/* --- PARCHE PARA LIBERAR EL BOTÓN DEL FOOTER --- */
+/* Esto le dice al footer de Olivero que no oculte cosas que salen de sus bordes */
+.site-footer, 
+.site-footer__content {
+    transform: none !important; /* Evita que el footer atrape la posición 'fixed' */
+    overflow: visible !important; /* Permite que el botón se vea fuera de la caja negra */
+    z-index: 500 !important; /* Un z-index menor que el del botón */
+    position: relative !important;
+}
